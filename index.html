@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>NASCH e.V.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/svg/Logo.svg">
+</head>
+<body class="logged-out" id="top">
+
+  <header class="site-header">
+    <a href="#top" class="logo">
+      <img src="assets/svg/Logo.svg" alt="NASCH-Logo">
+    </a>
+      <nav class="main-nav">
+        <button
+          id="navToggle"
+          class="nav-toggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="main-nav-list">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span></span>
+        </button>
+        <ul id="main-nav-list">
+          <li><a href="#start">Start</a></li>
+          <li class="requires-login"><a href="#mitgliederversammlung">Mitgliederversammlung</a></li>
+          <li><a href="#tagung">Tagung</a></li>
+          <li><a href="#anmeldung">Anmeldung</a></li>
+          <li class="requires-login"><a href="#download">Download</a></li>
+          <li><a href="#kontakt">Kontakt/Impressum</a></li>
+        </ul>
+      </nav>
+      <div class="auth-controls">
+        <button id="loginToggle" class="lock-toggle" type="button" aria-label="Mitgliederbereich">
+          <span class="lock-icon lock-icon--closed" aria-hidden="true">
+            <img src="assets/svg/geschlossen.svg" alt="">
+          </span>
+          <span class="lock-icon lock-icon--open" aria-hidden="true">
+            <img src="assets/svg/offen.svg" alt="">
+          </span>
+        </button>
+      </div>
+  </header>
+
+  <main>
+    
+    <section id="start" class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Im “Netzwerk anspruchsvolles Schulessen“ (NASCH e.V.)</h1>
+        <p>arbeiten deutschlandweit Caterer zusammen, die regionale Bio-Zutaten verwenden und das Kochen mit den Kindern forcieren.</p>
+        <p>Jedes Jahr findet ein Netzwerktreffen in einem anderen Ort statt.<br>Diesmal ist das <strong>Braunschweig.</strong></p>
+        <button type="button" class="btn hero-cta" id="heroCta">Zum Login</button>
+      </div>
+
+      <div class="hero-login" id="heroLogin">
+        
+
+        <div class="login-panel">
+          <button type="button" class="hero-close" id="heroClose" aria-label="Login schließen">×</button>
+          <form id="login-form" class="login-form" novalidate>
+            <div class="login-icon-wrapper">
+              <div class="login-icon-circle">
+                <img src="assets/svg/Login.svg">
+              </div>
+            </div>
+
+            <h2>Login für Mitglieder</h2>
+
+            <label class="visually-hidden-label" for="username">Benutzername</label>
+            <input id="username" name="username" type="text" required autocomplete="off" placeholder="Benutzername">
+
+            <label class="visually-hidden-label" for="password">Passwort</label>
+            <input id="password" name="password" type="password" required placeholder="Passwort">
+
+            <button type="submit" class="btn primary">Anmelden</button>
+            <p id="login-error" class="error-msg" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="hero-wave">
+        <img src="assets/svg/brush.svg">
+      </div>
+    </section>
+
+    <section class="member-welcome requires-login">
+      <div class="member-welcome__text">
+        <h2>WILLKOMMEN</h2>
+        <p class="member-welcome__lead">im Bereich für Mitglieder von NASCH e.V.</p>
+        <p class="member-welcome__kicker">Liebe Mitglieder,</p>
+        <p>dieser Bereich ist exklusiv für Sie und bietet alle wichtigen Informationen rund um unsere Veranstaltungen, News und Downloads.</p>
+      </div>
+      <div class="member-welcome__image">
+        <img src="assets/bilder/kind_caterer.png" alt="NASCH-Mitglieder beim Netzwerktreffen">
+      </div>
+    </section>
+
+    
+    <section id="mitgliederversammlung" class="section requires-login">
+      <main class="program">
+        <section class="timeline">
+          <div class="timeline__line"></div>
+
+          <article class="timeline__item timeline__item--start">
+            <div class="timeline__marker timeline__marker--big"></div>
+            <div class="timeline__header">
+              <h1>Mitglieder&shy;versammlung</h1>
+              <p>Programm: Dienstag, 10. März 2026</p>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">16:30 Uhr bis 18:00 Uhr</p>
+              <h2>Anreise der Netzwerk-Mitglieder</h2>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--right">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">18:00 Uhr</p>
+              <h2>Beginn der internen Jahrestagung</h2>
+              <p class="subtext">Großer Saal Jugendherberge Braunschweig</p>
+              <p class="subtext">Begrüßung und Einführung Marianne Salzhuber (NASCH-Koordinatorin)</p>
+              <div class="image-card">
+                <div class="image-card__bg"></div>
+                <img src="assets/bilder/Bild_3.webp" alt="Probekochen mit Schüler*innen">
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">19:00 Uhr</p>
+              <h2>Abendessen</h2>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--right">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">20:00 Uhr</p>
+              <h2>Fortsetzung interner Abstimmungen</h2>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--left">
+            <div class="timeline__marker timeline__marker--big"></div>
+            <div class="timeline__content">
+              <p class="time">21:00 Uhr</p>
+              <h2>Get-Together</h2>
+              <div class="image-card">
+                <div class="image-card__bg"></div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </section>
+
+    
+    <section id="tagung" class="section">
+      <main class="program">
+        <section class="timeline">
+          <div class="timeline__line"></div>
+
+          <article class="timeline__item timeline__item--start">
+            <div class="timeline__marker timeline__marker--big"></div>
+            <div class="timeline__header">
+              <h1>Tagung</h1>
+              <p>Programm: Mittwoch, 11. März 2026</p>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">10:00 Uhr</p>
+              <h2>Pressekonferenz der NASCH-Koordination</h2>
+              <p class="subtext">Parallel dazu:</p>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--right">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">10:00 Uhr</p>
+              <h2>Probekochen mit Schüler*innen</h2>
+              <p class="subtext">4. Klasse, Grundschule an der Wendenstraße</p>
+              <div class="image-card">
+                <div class="image-card__bg"></div>
+                <img src="assets/bilder/Bild_1.webp" alt="Probekochen mit Schüler*innen">
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">10:30 Uhr</p>
+              <h2>Öffentlicher Vortrag mit Diskussion</h2>
+              <p class="quote">„Was kommt auf den Tisch? Wer beim Schulessen mitredet und worauf es tatsächlich ankommt. Bemerkenswerte Beispiele aus den Bundesländern.“</p>
+              <p class="subtext">Referentin: Cornelia Zachock, Hamburg</p>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--right">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">12:30 Uhr</p>
+              <h2>Mittagessen</h2>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">14:00 Uhr</p>
+              <h2>Kocherfahrungen von Schulkindern</h2>
+              <p class="quote">„Wie es uns erging, wie es uns schmeckte.“ Viertklässler*innen berichten über ihre Kocherfahrungen.</p>
+              <div class="image-card">
+                <div class="image-card__bg"></div>
+                <img src="assets/bilder/Bild_2.webp" alt="Gemüse – Kocherfahrungen">
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--right">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="time">14:30 Uhr</p>
+              <h2>Arbeit in Kleingruppen</h2>
+              <p class="subtext"><b>I. Kleingruppe:</b> Gespräch mit Elternbeiräten und Schulleitungen über Herkunft, Geschmack und Kosten des Schulessens. Konzept von NASCH-Caterer Amar Mahato.</p>
+              <p class="subtext"><b>II. Kleingruppe:</b> Lebensmittelabfälle reduzieren, Ideen zur Entsorgung, Kooperationspartner.</p>
+              <p class="subtext"><b>III. Kleingruppe:</b> DGE-Qualitätsstandards, Nutzen und mögliche Zertifizierung.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--end timeline__item--right">
+            <div class="timeline__marker timeline__marker--big"></div>
+            <div class="timeline__content">
+              <p class="time">16:30 Uhr</p>
+              <h2>Rückblick und Ausblick</h2>
+              <p class="subtext">Gemeinsamer Abschluss der Tagung</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </section>
+
+    
+    <section id="anmeldung" class="section alt">
+      <h3 class="anmeldung-title">NASCH-Jahrestagung 2026</h3>
+      <p class="anmeldung-sub">
+        Ich will an der NASCH-Jahrestagung 2026<br>
+        Jugendherberge Braunschweig Wendenstraße 30 teilnehmen:
+      </p>
+
+      <div class="section-inner anmeldung-layout">
+        <div class="anmeldung-text-form">
+          <div class="anmeldung-card anmeldung-card-logged-out">
+            <div class="anmeldung-card-header">
+              <h3>Anmeldung</h3>
+            </div>
+            <form class="form-grid" id="form-basic">
+              <label><span class="visually-hidden-label"></span>
+                <input type="text" name="vorname" placeholder="Vorname:" required>
+              </label>
+              <label><span class="visually-hidden-label"></span>
+                <input type="text" name="name" placeholder="Name:" required>
+              </label>
+              <label><span class="visually-hidden-label"></span>
+                <input class="input-icon input-icon--mail" type="email" name="email" placeholder="E-Mail:" required>
+              </label>
+
+              <fieldset class="fieldset">
+                <legend>Ich nehme teil:</legend>
+                <label><input type="checkbox" name="teilnahme_mittwoch"> Mittwoch, 11. März</label>
+              </fieldset>
+
+              <fieldset class="fieldset">
+                <legend>Ich benötige eine Übernachtung:</legend>
+                <label><input type="radio" name="uebernachtung" value="ja"> Ja</label>
+                <label><input type="radio" name="uebernachtung" value="nein"> Nein</label>
+              </fieldset>
+
+              <button type="submit" class="btn primary">Anmeldung senden</button>
+            </form>
+          </div>
+
+          <div class="anmeldung-card anmeldung-card-logged-in">
+            <div class="anmeldung-card-header">
+              <h3>Anmeldung</h3>
+              <span class="anmeldung-step-indicator">1/2</span>
+            </div>
+
+            <form id="anmeldung-form-logged-in" class="form-grid">
+              <div class="form-step form-step-1 active">
+                <label><span class="visually-hidden-label">Vorname</span>
+                  <input type="text" name="vorname" placeholder="Vorname:" required>
+                </label>
+                <label><span class="visually-hidden-label">Nachname</span>
+                  <input type="text" name="name" placeholder="Name:" required>
+                </label>
+                <label><span class="visually-hidden-label">E-Mail</span>
+                  <input class="input-icon input-icon--mail" type="email" name="email" placeholder="E-Mail:" required>
+                </label>
+
+                <div class="member-box requires-login">
+                  <label><span class="visually-hidden-label"></span>
+                    <input type="text" name="anschrift" placeholder="Anschrift des NASCH-Caterers, für den ich arbeite:">
+                  </label>
+                  <label><span class="visually-hidden-label"></span>
+                    <input type="text" name="funktion" placeholder="In folgender Funktion:">
+                  </label>
+                  <label><span class="visually-hidden-label"></span>
+                    <input class="input-icon input-icon--phone" type="text" name="telefon" placeholder="Telefonisch erreichbar:">
+                  </label>
+                </div>
+
+                <button type="button" class="btn primary btn-next-step" data-next>Weiter</button>
+              </div>
+
+              <div class="form-step form-step-2">
+                <fieldset class="fieldset">
+                  <legend>Ich nehme teil:</legend>
+                  <div class="requires-login">
+                    <label><input type="checkbox" name="teilnahme_dienstag"> Dienstag, 10. März</label>
+                  </div>
+                  <label><input type="checkbox" name="teilnahme_mittwoch"> Mittwoch, 11. März</label>
+                </fieldset>
+
+                <fieldset class="fieldset">
+                  <legend>Ich benötige eine Übernachtung:</legend>
+                  <label><input type="radio" name="uebernachtung" value="ja"> Ja</label>
+                  <label><input type="radio" name="uebernachtung" value="nein"> Nein</label>
+                </fieldset>
+
+                <div class="step-actions">
+                  <button type="button" class="btn secondary btn-prev-step" data-prev>Zurück</button>
+                  <button type="submit" class="btn primary">Senden</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <aside class="anmeldung-map">
+          <iframe
+            src="https://www.google.com/maps?q=DJH+Jugendherberge+Braunschweig,Wendenstraße+30+38100+Braunschweig&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </aside>
+      </div>
+
+      <div id="form-success" class="form-success" aria-live="polite">
+        <div class="form-success-card">
+          <div class="form-success-icon">
+            <span class="checkmark">✓</span>
+          </div>
+          <h3>Danke für Ihre Anmeldung!</h3>
+          <p>Wir haben Ihre Daten erhalten.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="download" class="section alt">
+      <div class="section-inner downloads-section">
+        <h2>Download</h2>
+        <div class="download-list">
+          <article class="download-card requires-login">
+            <div class="download-card__text">
+              <h3>Nachhaltige Rezepte</h3>
+              <p>Exklusive Rezepte mit regionalen und saisonalen Zutaten für eine nachhaltige Gastronomie.</p>
+              <button class="download-btn" type="button">
+                <span class="download-btn__icon"><img src="assets/svg/pfeil.svg" alt=""></span>
+                <span class="download-btn__label">Hier herunterladen</span>
+              </button>
+            </div>
+            <div class="download-card__image">
+              <img src="assets/bilder/Bild_6.webp" alt="Frau in einem nachhaltigen Gemüsefeld">
+            </div>
+          </article>
+
+          <article class="download-card requires-login">
+            <div class="download-card__text">
+              <h3>Studie: „Nachhaltige Ernährung in der Gastronomie“</h3>
+              <p>Einblick in die ökologischen und ökonomischen Vorteile nachhaltiger Gastronomiebetriebe.</p>
+              <button class="download-btn" type="button">
+                <span class="download-btn__icon"><img src="assets/svg/pfeil.svg" alt=""></span>
+                <span class="download-btn__label">Hier herunterladen</span>
+              </button>
+            </div>
+            <div class="download-card__image">
+              <img src="assets/bilder/Bild_5.webp" alt="Köchin schneidet Gemüse in einer Großküche">
+            </div>
+          </article>
+
+          <article class="download-card requires-login">
+            <div class="download-card__text">
+              <h3>Präsentationen –" „Food Waste“-Veranstaltung (22. März 2025)</h3>
+              <p>Alle Vorträge und Materialien zur Vermeidung von Lebensmittelverschwendung.</p>
+              <button class="download-btn" type="button">
+                <span class="download-btn__icon"><img src="assets/svg/pfeil.svg" alt=""></span>
+                <span class="download-btn__label">Hier herunterladen</span>
+              </button>
+            </div>
+            <div class="download-card__image">
+              <img src="assets/bilder/Bild_7.webp" alt="Publikum bei einer Präsentation zum Thema Food Waste">
+            </div>
+          </article>
+
+          <article class="download-card">
+            <div class="download-card__text">
+              <h3>Leitfaden: „Zero Waste in der Gastronomie“</h3>
+              <p>Praktische Tipps zur Reduzierung von Lebensmittelverschwendung in Gastronomiebetrieben.</p>
+              <button class="download-btn" type="button">
+                <span class="download-btn__icon"><img src="assets/svg/pfeil.svg" alt=""></span>
+                <span class="download-btn__label">Hier herunterladen</span>
+              </button>
+            </div>
+            <div class="download-card__image">
+              <img src="assets/bilder/Bild_4.webp" alt="Buntes Gemüse – Zero Waste in der Gastronomie">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontakt" class="site-footer section alt">
+    <div class="footer-brush">
+      <img src="assets/svg/brush.svg" alt="" aria-hidden="true">
+    </div>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>NASCH e.V.</h3>
+        <p>
+          Netzwerk anspruchsvolles Schulessen<br>
+          Koordinationsbüro<br>
+          Gneisenaustraße 17<br>
+          10961 Berlin
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <p>
+          Tel.: 030/12345670<br>
+          Fax: 030/12345677<br>
+          <a href="mailto:buero@nasch-berlin.de">buero@nasch-berlin.de</a><br>
+          <a href="https://www.nasch-berlin.de" target="_blank" rel="noopener noreferrer">www.nasch-berlin.de</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>Seiten</h3>
+        <ul class="footer-nav">
+          <li><a href="#start">Start</a></li>
+          <li class="requires-login"><a href="#mitgliederversammlung">Mitgliederversammlung</a></li>
+          <li><a href="#tagung">Tagung</a></li>
+          <li><a href="#anmeldung">Anmeldung</a></li>
+          <li class="requires-login"><a href="#download">Download</a></li>
+          <li><a href="#kontakt">Kontakt / Impressum</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Impressum</h3>
+        <p>
+          <strong>Vertretungsberechtigt:</strong> Marianne Salzhuber<br>
+          <strong>Vereinsregister Charlottenburg:</strong> XXX276633
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-row">
+        <p>&copy; <span id="year"></span> NASCH e.V.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <span class="social-icon social-icon--ig" aria-hidden="true"></span>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <span class="social-icon social-icon--fb" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Nach oben scrollen">
+    <img src="assets/svg/pfeil_2.svg" alt="">
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
